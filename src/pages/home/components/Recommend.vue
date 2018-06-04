@@ -4,7 +4,7 @@
     <img class="love" src=""/>
     猜你喜欢</div>
   <ul>
-    <li class="item border-bottom" v-for="item of iomList" :key="item.id">
+    <li class="item border-bottom" v-for="item of list" :key="item.id">
       <img class="item-img" :src="item.imgUrl" />
       <div class="item-info">
         <p class="item-title">{{item.title}}</p>
@@ -19,65 +19,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      iomList: [
-        {
-          id: '001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1710/f5/f575b0f463058f96a3.img.jpg_200x200_e772e5ef.jpg',
-          title: '宁乡炭河古城',
-          desc: '哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈'
-        },
-        {
-          id: '002',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1710/f5/f575b0f463058f96a3.img.jpg_200x200_e772e5ef.jpg',
-          title: '宁乡炭河古城',
-          desc: '哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈'
-        },
-        {
-          id: '003',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1710/f5/f575b0f463058f96a3.img.jpg_200x200_e772e5ef.jpg',
-          title: '宁乡炭河古城',
-          desc: '哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈'
-        },
-        {
-          id: '004',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1710/f5/f575b0f463058f96a3.img.jpg_200x200_e772e5ef.jpg',
-          title: '宁乡炭河古城',
-          desc: '哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈'
-        },
-        {
-          id: '005',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1710/f5/f575b0f463058f96a3.img.jpg_200x200_e772e5ef.jpg',
-          title: '宁乡炭河古城',
-          desc: '哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈'
-        },
-        {
-          id: '006',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1710/f5/f575b0f463058f96a3.img.jpg_200x200_e772e5ef.jpg',
-          title: '宁乡炭河古城',
-          desc: '哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈'
-        },
-        {
-          id: '007',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1710/f5/f575b0f463058f96a3.img.jpg_200x200_e772e5ef.jpg',
-          title: '宁乡炭河古城',
-          desc: '哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈'
-        },
-        {
-          id: '008',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1710/f5/f575b0f463058f96a3.img.jpg_200x200_e772e5ef.jpg',
-          title: '宁乡炭河古城',
-          desc: '哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈'
-        },
-        {
-          id: '009',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1710/f5/f575b0f463058f96a3.img.jpg_200x200_e772e5ef.jpg',
-          title: '宁乡炭河古城',
-          desc: '哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈'
-        }
-      ]
-    }
+  props: {
+    list: Array
   }
 }
 </script>

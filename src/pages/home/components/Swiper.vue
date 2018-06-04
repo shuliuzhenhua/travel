@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
-  <swiper :options="swiperOption">
-      <swiper-slide v-for="item of swiperlist" :key="item.id"><img class="swiper-img" :src="item.imgUrl" ></swiper-slide>
+  <swiper :options="swiperOption" v-if="showSwiper">
+      <swiper-slide v-for="item of list" :key="item.id"><img class="swiper-img" :src="item.imgUrl" ></swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
   </swiper>
   </div>
@@ -10,6 +10,9 @@
 <script>
 export default {
   name: 'HomeSwiper',
+  props: {
+    list: Array
+  },
   data () {
     return {
       swiperOption: {
@@ -17,20 +20,12 @@ export default {
         pagination: '.swiper-pagination',
         // 配置轮播项是否可以循环
         loop: true
-      },
-      swiperlist: [{
-        id: '001',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1805/3b/ef86879aa50e3002.jpg_750x200_2a108508.jpg'
-      },
-      {
-        id: '002',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1706/b8/a8e8ff02b094c802.jpg_750x200_ddaec8e5.jpg'
-      },
-      {
-        id: '003',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/eb/f3d2fa5308fd5f02.jpg_750x200_38b8d6f7.jpg'
       }
-      ]
+    }
+  },
+  computed: {
+    showSwiper () {
+      return this.list.length
     }
   }
 }
@@ -44,7 +39,7 @@ export default {
   overflow :hidden
   width: 100%
   height: 0
-  padding-bottom: 26.6%
+  padding-bottom: 31%
   background :#cccccc
   .swiper-img
     width: 100%

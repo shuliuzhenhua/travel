@@ -1,6 +1,6 @@
 <template>
 <div class="icons">
-  <swiper>
+  <swiper :options="swiperOption">
     <swiper-slide v-for="(page,index) of pages" :key="index">
       <div class="icon" v-for="item of page" :key="item.id">
         <div class="icon-img">
@@ -16,66 +16,20 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    list: Array
+  },
   data () {
     return {
-      iconList: [
-        {
-          id: '001',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          desc: '景点门票'
-        },
-        {
-          id: '002',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/bd/9f7b9b2b60c1502.png',
-          desc: '踏青赏花'
-        },
-        {
-          id: '003',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-          desc: '必备榜单'
-        },
-        {
-          id: '004',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/96/c70f1e85ae4a4f02.png',
-          desc: '自然风光'
-        },
-        {
-          id: '005',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-          desc: '一日游'
-        },
-        {
-          id: '006',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png',
-          desc: '动植物园'
-        },
-        {
-          id: '007',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png',
-          desc: '主题乐园'
-        },
-        {
-          id: '008',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/b8/c5dcdb58deec2402.png',
-          desc: '湘西凤凰'
-        },
-        {
-          id: '009',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/48/cb72b99b71974c02.png',
-          desc: '生活休闲'
-        },
-        {
-          id: '010',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/80/416c6ab3368d1f02.png',
-          desc: '全部玩乐'
-        }
-      ]
+      swiperOption: {
+        autoplay: false
+      }
     }
   },
   computed: {
     pages () {
       const pages = []
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
