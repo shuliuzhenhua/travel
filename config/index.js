@@ -12,6 +12,8 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
+        //如果需要从后台拿到数据则将8080改成80并且pathRewrite可删除掉
+        //若你的后台地址不在本地在内网或者外网上则需要将这个地址改成一个192.168.1.1或者带有一个域名的地址
         target: 'http://localhost:8080',
         pathRewrite: {
           '^/api': '/static/mock'
